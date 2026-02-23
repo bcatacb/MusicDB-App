@@ -1,44 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/**/*.js",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "db/**/*.sql",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
   "rewrites": [
-    {
-      "source": "/db/(.*)",
-      "destination": "/db/$1"
-    },
-    {
-      "source": "/src/(.*)",
-      "destination": "/src/$1"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/db/schema-init.sql",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/plain"
-        }
-      ]
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
